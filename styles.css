@@ -1,0 +1,64 @@
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.infobar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  /* grid-template-columns: repeat(4, minmax(100px, 200px)); */
+  /* grid-template-rows: repeat(3, minmax(100px, 200px)); */
+  grid-template-columns: repeat(4, 15vw);
+  grid-template-rows: repeat(3, 15vw);
+  margin: 50px;
+}
+
+.item {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: lightcyan;
+  transition: all 0.2s;
+}
+
+.item__content {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.matched {
+  visibility: visible;
+}
+
+.visible__item {
+  background: lightyellow;
+}
+
+.matched__item {
+  background: lightgreen;
+}
+
+.game-won {
+  display: none;
+}
+
+.game-won--active {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  background: grey;
+  top: 0;
+  height: 90vh;
+  width: 90vw;
+  margin: 5vh 5vw;
+}
