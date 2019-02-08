@@ -16,7 +16,12 @@
   /* grid-template-rows: repeat(3, minmax(100px, 200px)); */
   grid-template-columns: repeat(4, 15vw);
   grid-template-rows: repeat(3, 15vw);
-  margin: 50px;
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #33333380;
+  background: linear-gradient(to bottom right, #30caba, #a67fcf);
 }
 
 /* FLIP CARD TUTORIAL */
@@ -44,17 +49,18 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #33333380;
 }
 
 /* Style the front side (fallback if image is missing) */
 .item__front {
-  background-color: #bbb;
-  color: black;
+  background-color: #303d49;
 }
 
 /* Style the back side */
 .item__back {
-  background-color: dodgerblue;
+  background: #2eb2e6;
   color: white;
   transform: rotateY(180deg);
   display: grid;
@@ -68,6 +74,10 @@
 
 .matched {
   transform: rotateY(180deg);
+}
+
+.item__back--matched {
+  background: #30ccba;
 }
 
 .game-won {

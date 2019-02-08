@@ -61,6 +61,12 @@ function handleGuess(content, target) {
     // add matched class to content
     guess.classList.add("matched");
     content.classList.add("matched");
+    guess
+      .getElementsByClassName("item__back")[0]
+      .classList.add("item__back--matched");
+    content
+      .getElementsByClassName("item__back")[0]
+      .classList.add("item__back--matched");
     // remove event listners
     target.removeEventListener("click", handleClick);
     guess.parentNode.removeEventListener("click", handleClick);
@@ -121,8 +127,12 @@ restartBtn.addEventListener("click", restart);
 
 function restart() {
   // remove classes from items
-  itemsInner.forEach(inner => inner.classList.remove("visible", "matched"));
-
+  itemsInner.forEach(inner => {
+    inner.classList.remove("visible", "matched");
+    inner
+      .getElementsByClassName("item__back")[0]
+      .classList.remove("item__back--matched");
+  });
   // clear guess
   guess = null;
 
