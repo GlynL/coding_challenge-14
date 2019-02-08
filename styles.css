@@ -19,32 +19,55 @@
   margin: 50px;
 }
 
+/* FLIP CARD TUTORIAL */
+/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
 .item {
+  display: grid;
+  background: transparent;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.item__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.item__front,
+.item__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.item__front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.item__back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
   display: grid;
   justify-content: center;
   align-content: center;
-  background: lightcyan;
-  transition: all 0.2s;
-}
-
-.item__content {
-  visibility: hidden;
 }
 
 .visible {
-  visibility: visible;
+  transform: rotateY(180deg);
 }
 
 .matched {
-  visibility: visible;
-}
-
-.visible__item {
-  background: lightyellow;
-}
-
-.matched__item {
-  background: lightgreen;
+  transform: rotateY(180deg);
 }
 
 .game-won {

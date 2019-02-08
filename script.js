@@ -1,6 +1,7 @@
 // ------- selectors -------------
 const items = document.querySelectorAll(".item");
-const itemsContent = document.querySelectorAll(".item__content");
+const itemsInner = document.querySelectorAll(".item__inner");
+const itemsContent = document.querySelectorAll(".item__back");
 
 // =============================
 // ------- game setup ---------
@@ -38,18 +39,18 @@ function handleClick(e) {
   // if clicks currently disabled return
   if (!clickToggle) return;
   // content of click
-  const content = e.target.getElementsByClassName("item__content")[0];
+  const content = e.currentTarget.getElementsByClassName("item__inner")[0];
   // add visible class to clicked item
   content.classList.add("visible");
 
   if (guess === null) {
     // remove listner -- can't click self for match
-    e.target.removeEventListener("click", handleClick);
+    e.currentTarget.removeEventListener("click", handleClick);
     // save guess
     guess = content;
   } else {
     // check if guess a match
-    handleGuess(content, e.target);
+    handleGuess(content, e.currentTarget);
   }
 }
 
@@ -63,13 +64,10 @@ function handleGuess(content, target) {
     // remove event listners
     target.removeEventListener("click", handleClick);
     guess.parentNode.removeEventListener("click", handleClick);
-    // add matched class to item
-    target.classList.add("matched__item");
-    guess.parentNode.classList.add("matched__item");
-    // add to matches
+
+    // add to matches count
     matches++;
     // check if won
-    console.log(matches);
     if (matches === 6) gameWon();
   } else {
     /* incorrect guess */
@@ -83,14 +81,14 @@ function handleGuess(content, target) {
 
 // hide item content
 function hideItems() {
-  // loop over all items content
-  itemsContent.forEach(item => {
+  // loop over all items
+  items.forEach(item => {
     // disbale clicking
     clickToggle = false;
     // delay
     setTimeout(() => {
-      // remove visible from item contents
-      item.classList.remove("visible");
+      // remove visible from item inner
+      item.getElementsByClassName("item__inner")[0].classList.remove("visible");
       // enable clicking
       clickToggle = true;
     }, 1000);
@@ -123,16 +121,7 @@ restartBtn.addEventListener("click", restart);
 
 function restart() {
   // remove classes from items
-  items.forEach(item => {
-    item.classList.remove("visible__item");
-    item.classList.remove("matched__item");
-  });
-
-  // remove classes from items content
-  itemsContent.forEach(item => {
-    item.classList.remove("visible");
-    item.classList.remove("matched");
-  });
+  itemsInner.forEach(inner => inner.classList.remove("visible", "matched"));
 
   // clear guess
   guess = null;
