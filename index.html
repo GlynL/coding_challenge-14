@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>The Matching Game</title>
-    <link rel="stylesheet" href="styles.css" type="text/css" />
     <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+      integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <heading class="heading"><h1>The Matching Game</h1></heading>
     <section class="infobar">
-      <div>Time Elapsed: <span class="timer">0</span> seconds</div>
-      <div>Moves: <span class="moves">0</span></div>
-      <button class="restart">restart</button>
+      <div class="timer__wrapper">
+        Time Elapsed:
+        <div><span class="timer">0</span> seconds</div>
+      </div>
+      <div class="moves__wrapper">
+        Moves:
+        <div>
+          <span class="moves">0</span>
+        </div>
+      </div>
+      <button class="restart"><i class="fas fa-undo-alt"></i></button>
     </section>
     <section class="game">
       <div class="item">
@@ -88,8 +106,33 @@
           <div class="item__back"></div>
         </div>
       </div>
+      <div class="item">
+        <div class="item__inner">
+          <div class="item__front"></div>
+          <div class="item__back"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__inner">
+          <div class="item__front"></div>
+          <div class="item__back"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__inner">
+          <div class="item__front"></div>
+          <div class="item__back"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__inner">
+          <div class="item__front"></div>
+          <div class="item__back"></div>
+        </div>
+      </div>
     </section>
     <section class="game-won">
+      <i class="fas fa-thumbs-up game-won__icon"></i>
       <h2>Woo, you won!</h2>
       <p>Time Elapsed: <span class="modal-time">?</span></p>
       <p>Moves: <span class="modal-moves">?</span></p>

@@ -7,7 +7,24 @@ const itemsContent = document.querySelectorAll(".item__back");
 // ------- game setup ---------
 function setupGame() {
   // contents for game items
-  const results = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
+  const results = [
+    `<i class="fas fa-angry"></i>`,
+    `<i class="fas fa-angry"></i>`,
+    `<i class="fas fa-anchor"></i>`,
+    `<i class="fas fa-anchor"></i>`,
+    `<i class="fas fa-bomb"></i>`,
+    `<i class="fas fa-bomb"></i>`,
+    `<i class="fas fa-bong"></i>`,
+    `<i class="fas fa-bong"></i>`,
+    `<i class="fas fa-cat"></i>`,
+    `<i class="fas fa-cat"></i>`,
+    `<i class="fas fa-dog"></i>`,
+    `<i class="fas fa-dog"></i>`,
+    `<i class="fas fa-hotdog"></i>`,
+    `<i class="fas fa-hotdog"></i>`,
+    `<i class="fas fa-coffee"></i>`,
+    `<i class="fas fa-coffee"></i>`
+  ];
   // shuffled contents
   const shuffledResults = shuffle(results);
   // add a shuffled content to each game item
@@ -74,7 +91,7 @@ function handleGuess(content, target) {
     // add to matches count
     matches++;
     // check if won
-    if (matches === 6) gameWon();
+    if (matches === 8) gameWon();
   } else {
     /* incorrect guess */
     // add listener back to current guess
