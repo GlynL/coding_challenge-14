@@ -2,7 +2,11 @@
 
 ## Live Site
 
+<<<<<<< HEAD
 https://www.glynlewington.com/guessing-game/
+=======
+https://www.glynlewington.com/guessing-game
+>>>>>>> c3786d5b89aa921b1fef4d76d5d8aa270162419e
 
 ## Details
 
